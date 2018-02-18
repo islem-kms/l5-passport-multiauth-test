@@ -17,6 +17,10 @@ Then
 ```
 composer update
 ```
+Make a new app key
+```
+php artisan key:generate
+```
 Edit .env file 
 ```
 DB_DATABASE=homestead
@@ -27,13 +31,13 @@ Run the migration
 ```
 php artisan migrate
 ```
-Before your application can issue tokens via the password grant, you will need to create a password grant client.
-```
-php artisan passport:client --password
-```
 This command generates the encryption keys Passport needs in order to generate access token. The generated keys are not typically kept in source control
 ```
 php artisan passport:keys
+```
+Before your application can issue tokens via the password grant, you will need to create a password grant client.
+```
+php artisan passport:client --password
 ```
 Edit BaseApiController.php to set the path to your directory and then run:
 ```
